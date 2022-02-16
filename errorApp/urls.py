@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.basic, name='basic'),
+    path('new/', views.new, name='new'),
     #     path('new/', views.new, name='new'),
     #     path('django/', views.django, name='django'),
     #     path('python/', views.python, name='python'),

@@ -1,5 +1,54 @@
+{% extends 'base.html' %}
 {% block content %}
 
-<h1>WC</h1>
+<br/>
+
+<main class="home">
+  <section class="hero-section text-center">
+    <div class="container container--narrow">
+      <div class="hero-section__box">
+        {% comment %} <h5 style="color:rgb(255, 255, 255)">Basic</h5> {% endcomment %}
+        </div>
+
+{% comment %} <div class="hero-section__search">
+  <form id="searchForm" class="form" action="{% url 'basic' %}" method="get">
+    <div class="form__field">
+      <label for="formInput#search" style="color:rgb(255, 255, 255)"></label>
+      <input class="input input--text" id="formInput#search" type="text" name="search_query"
+        value="{{search_query}}" placeholder="search anything...." />
+    </div>
+    <input class="btn btn--sub btn--lg" style="color:rgb(255, 255, 255)" type="submit" value="Search" />
+  </form>
+</div></div> {% endcomment %}
+    
+    <br/>
+{% for abc in allError %}
+
+{% if abc.section == "General" %}
+
+
+
+<table class="table table-striped table-bordered table-light">
+  <thead class="thead-light"> 
+
+    <!-- {{forloop.counter0}} -->
+
+    <tr>      
+      <th scope="col" style="background-color:rgb(104, 36, 36); color:rgb(255, 255, 255)">Prob: </th>
+      <td scope="col" style="background-color:rgb(104, 36, 36); color:rgb(255, 255, 255)">{{abc.error_type}}</td>          
+    </tr>
+  </thead>
+
+  <tbody>   
+<td scope="row" style="background-color:rgb(53, 57, 58); color:rgb(255, 255, 255)"><b>Sol:</b></td>
+<td style="background-color:rgb(53, 57, 58); color:rgb(255, 255, 255)">{{abc.solution|linebreaks}}{{abc.link|urlize}}</td>
+</tbody>
+        {% endif %}
+        {% endfor %}
+
+  </tbody>
+</table>
+
+<br/><br/>
 
 {% endblock %}

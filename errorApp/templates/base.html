@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png"  href="{%  static 'logo1.png' %}">
+    <title>ERRORs</title>
+  </head>
+
+
+  <body>
+
+    <style> 
+      body 
+       {background-color:rgb(49, 43, 43);}
+  </style> 
+
+  	<nav class="navbar navbar-expand-md navbar-dark bg-dark border border-dark py-1">
+      <div class="container">
+          <a class="navbar-brand" href="{% url 'basic' %}">
+               <img src="{%  static 'logo1.png' %}" width="130" height="40" class="d-inline-block align-top">
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-text-paragraph" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+                </svg></span>
+          </a>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      
+
+      <div class="hero-section__search">
+        <form id="searchForm" class="form" action="{% url 'basic' %}" method="get">
+          <div class="form__field">
+            <label for="formInput#search" style="color:rgb(255, 255, 255)"></label>
+            <input class="input input--text" id="formInput#search" type="text" name="search_query"
+              value="{{search_query}}" placeholder="search errors...." />
+          </div>
+          <!-- <input class="btn btn--sub btn--lg" style="color:rgb(255, 255, 255)" type="submit" value="Search" /> -->
+        </form>
+      </div></div>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'new' %}">Add</a>
+      </li>
+           
+      {% comment %} <li class="nav-item">
+        <a class="nav-link" href="{% url 'django' %}">Django</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'python' %}">Python</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'database' %}">Database</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'api' %}">Api</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'aws' %}">Aws</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'frontend' %}">Frontend</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'extra' %}">Extra</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'new' %}"><b>Add</b></a>
+      </li> {% endcomment %}
+
+    </nav>
+      
+
+    
+    <div class="container">
+
+
+
+	    {% block content %}
+
+		{% endblock %}
+	</div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
