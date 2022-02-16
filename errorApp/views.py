@@ -25,7 +25,7 @@ def basic(request):
         search_query = request.GET.get('search_query')
 
     allError = allErrors.objects.filter(
-        Q(question__icontains=search_query) | Q(answer__icontains=search_query))
+        Q(error_type__icontains=search_query) | Q(solution__icontains=search_query))
 
     return render(request, 'home.html', {'allError': allError, 'search_query': search_query})
 
